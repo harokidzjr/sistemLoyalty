@@ -92,6 +92,11 @@ class Lisensi extends CActiveRecord {
         return $test;
     }
 
+    public function getNamaToko() {
+        $t = Tenant::model()->findByPk($this->id);
+        echo $t->nama_toko;
+    }
+
     /**
      * Returns the static model of the specified AR class.
      * Please note that you should have this exact method in all your CActiveRecord descendants!

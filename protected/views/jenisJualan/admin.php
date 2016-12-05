@@ -48,6 +48,10 @@ $this->widget('booster.widgets.TbGridView', array(
     'filter' => $model,
     'columns' => array(
         'id',
+        array(
+            'header' => 'Nama Toko',
+            'value' => '$data->getNamaToko()'
+        ),
         'jns_jualan',
 //        array(
 //            'class' => 'booster.widgets.TbButtonColumn',

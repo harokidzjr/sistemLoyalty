@@ -102,4 +102,9 @@ class JenisJualan extends CActiveRecord {
         return parent::model($className);
     }
 
+    public function getNamaToko() {
+        $t = Tenant::model()->findByPk($this->id);
+        echo $t->nama_toko;
+    }
+
 }

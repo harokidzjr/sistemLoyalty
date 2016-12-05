@@ -93,7 +93,6 @@ class MerkDagang extends CActiveRecord {
     }
     public function getNamaToko(){
         $t = Tenant::model()->findByPk($this->id);
-//        return $t->nama_toko;
         echo $t->nama_toko;
     }
 
