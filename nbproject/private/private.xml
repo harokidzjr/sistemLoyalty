@@ -3,12 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/models/Kwitansi.php</file>
             <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/models/JenisJualan.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/kwitansi/_form.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/kwitansi/create.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/kwitansi/admin.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/kwitansi/kwitansiCustomer.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/tenant/_form.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/kwitansi/inputCustomer.php</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/config/database.php</file>
             <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/models/Lisensi.php</file>
             <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/models/MerkDagang.php</file>
             <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/controllers/TenantController.php</file>
-            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/views/tenant/_form.php</file>
-            <file>file:/C:/xampp/htdocs/sistemLoyalty/loyalty_system.sql</file>
+            <file>file:/C:/xampp/htdocs/sistemLoyalty/protected/controllers/KwitansiController.php</file>
         </group>
     </open-files>
 </project-private>
