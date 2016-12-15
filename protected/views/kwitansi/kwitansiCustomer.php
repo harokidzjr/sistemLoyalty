@@ -28,6 +28,7 @@ return false;
 <?php
 $this->widget('booster.widgets.TbGridView', array(
     'id' => 'kwitansi-grid',
+    'type' => 'bordered condensed stripped',
     'dataProvider' => $model->search(),
     'columns' => array(
         'no_resi',
@@ -35,16 +36,39 @@ $this->widget('booster.widgets.TbGridView', array(
         'id_konversi',
         'id_tenant',
         'id_customer',
+//        array(
+//            'class' => 'booster.widgets.TbButtonColumn',
+//        ),
         array(
+            'header' => 'Action',
             'class' => 'booster.widgets.TbButtonColumn',
+            'template' => '{item}',
+            'htmlOptions' => array('class' => 'span2'),
+            'buttons' => array(
+                'item' => array(
+                    'label' => 'Lihat Kwitansi',
+                    'icon' => 'shopping-cart',
+                    'url' => 'Yii::app()->createUrl("kwitansi/tambahItem", array("noResi"=>$data->no_resi))',
+                    'options' => array(
+                        'class' => 'btn btn-xs btn-success ',
+                    ),
+                ),
+            ),
         ),
     ),
 ));
 echo '<br>';
 $this->widget('booster.widgets.TbButton', array(
     'buttonType' => 'link',
+    'context' => 'success',
+    'label' => 'Tambah Kwitansi',
+    'url' => $this->createUrl('tambahKwitansiCustomer',array('idCustomer'=> $idCustomer)),
+));
+echo ' ';
+$this->widget('booster.widgets.TbButton', array(
+    'buttonType' => 'link',
     'context' => 'primary',
-    'label' => 'Kemabli',
+    'label' => 'Kembali',
     'url' => $this->createUrl('inputCustomer'),
 ));
 ?>

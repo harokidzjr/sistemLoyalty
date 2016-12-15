@@ -51,6 +51,7 @@ $this->widget('booster.widgets.HaroMenu', array(
                 array('label' => 'Customer', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/customer/admin')),
                 array('label' => 'Item Kwitansi', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/itemKwitansi/admin')),
                 array('label' => 'Kwitansi', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/kwitansi/admin')),
+                array('label' => 'Transaksi Kwitansi', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/kwitansi/inputCustomer')),
                 array('label' => 'Marchendise Customer', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/marchendiseCustomer/admin')),
                 array('label' => 'Point', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/point/admin')),
                 array('label' => 'Undian Customer', 'icon' => 'menu-icon fa fa-circle-o', 'url' => array('/undianCustomer/admin')),

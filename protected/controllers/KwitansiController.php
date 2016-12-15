@@ -33,7 +33,7 @@ class KwitansiController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'inputCustomer','lihatKwitansi'),
+                'actions' => array('admin', 'delete', 'inputCustomer', 'lihatKwitansi', 'tambahKwitansiCustomer','tambahItem'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -170,12 +170,48 @@ class KwitansiController extends Controller {
         ));
     }
 
+    public function actionTambahKwitansiCustomer($idCustomer) {
+        $modelKwitansi = new Kwitansi;
+        $modelKwitansi->id_customer = $idCustomer;
+        if (isset($_POST['Kwitansi'])) {
+            $modelKwitansi->attributes = $_POST['Kwitansi'];
+            if ($modelKwitansi->save()) {
+                $this->redirect(array('tambahItem', 'noResi' => $modelKwitansi->no_resi));
+            }
+        }
+        $this->render('tambahKwitansiCustomer', array(
+            'modelKwitansi' => $modelKwitansi,
+            'idCustomer' => $idCustomer,
+        ));
+    }
+
+    public function actionTambahItem($noResi) {
+        
+        $modelKwitansi = Kwitansi::model()->findByPk($noResi);
+        $modelList = new ItemKwitansi;
+        $modelList->no_resi = $noResi;
+        $model = new ItemKwitansi;
+        $model->no_resi = $noResi;
+        $this->performAjaxValidation($model);
+        if (isset($_POST['ItemKwitansi'])) {
+            $model->attributes = $_POST['ItemKwitansi'];
+            if ($model->save()) {
+                $this->redirect(array('tambahItem', 'noResi' => $modelKwitansi->no_resi));
+            }
+        }
+        $this->render('tambahItemKwitansi', array(
+            'modelKwitansi' => $modelKwitansi,
+            'modelList' => $modelList,
+            'model' => $model,
+        ));
+    }
+
     public function actionLihatKwitansi($idCustomer) {
         $model = new Kwitansi;
         $model->id_customer = $idCustomer;
         $this->render('kwitansiCustomer', array(
             'model' => $model,
-            
+            'idCustomer' => $idCustomer,
         ));
     }
 
